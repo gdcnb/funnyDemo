@@ -1,0 +1,34 @@
+ul,li{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.flex{
+    display: flex;
+    margin: 0 10px;
+}
+.flexlist li {
+    flex: 1;
+    border: 1px solid;
+}
+.flexlist li a {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+}
+.flexlist li img {
+    display: block;
+    width: 100%;
+}
+
+.flexgrid{
+    flex: 1;
+}
+.flexgrid-limg{width: 100%;}
+.flexgrid-r{height: 50%;}
+.flexgrid-r img{
+    width: 100%;
+}
+.flex .flexgrid:first-child {margin-right: 5px;}
+.flexgrid .flexgrid-r:first-child{margin-bottom: 5px;}
+.flexgrid .flexgrid-r:last-child{margin-top: 5px;}
