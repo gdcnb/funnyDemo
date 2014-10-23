@@ -1,1 +1,1 @@
-define(function(require){    var consBar = require('components/constellationBar/constellationBar.js');    consBar();});
+define(function(require){    var consBar = require('components/constellationBar/constellationBar.js');    consBar();});
