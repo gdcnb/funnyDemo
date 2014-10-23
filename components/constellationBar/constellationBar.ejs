@@ -1,0 +1,36 @@
+<section class="contsBarWarp">
+    <h2 class="title">星座</h2>
+    <div class="mlr15 contsBar">
+        <% var defStar = this.constList[0] %>
+        <div class="clearfix">
+            <a class="contsBar-icon" href="<%= defStar.href %>" title="<%= defStar.title %>">
+                <img data-src="<%= defStar.imgUrl %>" data-no-bg="1"/>
+            </a>
+            <div class="contsBar-cont">
+                <div class="pos-rel">
+                    <p class="contsBar-cont-title"><%= defStar.title %> <%= defStar.date %></p>
+                    <select >
+                        <% this.constList.forEach(function(item){ %>
+                        <option value="<%= item.astroId %>"
+                                data-url="<%= item.href %>"
+                                data-img="<%= item.imgUrl %>"
+                                data-title="<%= item.title + item.date %>"
+                                ><%= item.title + item.date %></option>
+                        <% }); %>
+                    </select>
+                </div>
+                <div class="contsBar-fortune">
+                    <span>今日运势</span>
+                    <% var forNum = parseInt(defStar.fortune), norNum = 5 - forNum; %>
+                    <% for(var i = 0; i < forNum; i ++){ %>
+                    <em class="contsBar-star-active">★</em>
+                    <% } %>
+                    <% for(var j = 0; j < norNum; j ++){ %>
+                    <em class="contsBar-star-normal">★</em>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+        <a class="contsBar-sug" href="<%= defStar.href %>" title="<%= defStar.title %>"><%= defStar.suggest %></a>
+    </div>
+</section>

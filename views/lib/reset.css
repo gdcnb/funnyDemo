@@ -1,0 +1,145 @@
+/**
+ * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
+ * http://cssreset.com
+ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+body {
+    font-family: "Helvetica Neue",Helvetica,STHeiTi,sans-serif;
+    font-size:15px;
+    color:#333;
+}
+a {
+    text-decoration: none;
+    color:#333;
+}
+
+body.night {
+    color:#525252;
+}
+body.night a {
+    color:#385170;
+}
+body.night a:visited {
+    color:#393f47;
+}
+
+.hot{
+    color:#ff7c1b
+}
+
+body.night .hot {
+    color:#66320b
+}
+.title {
+    font-size:15px;
+    line-height:21px;
+    height:21px;
+    margin:15px 0;
+    border-left:5px solid #2d92e7;
+    color:#999;
+    padding-left:15px;
+}
+body.night .title{
+    border-color:#3d3d3d;
+    color:#525252
+}
+.title .more {
+    float:right;
+    width:30px;
+    height:14px;
+    line-height:12px;
+    color:#fff;
+    background:#bbb;
+    margin-right:18px;
+    text-align:center;
+    font-size:12px;
+    padding: 2px 0 1px;
+    border-radius: 3px;
+    margin-top: 1px;
+}
+
+body.night .title .more{
+    color:#6a6a6a!important;
+    background-color: rgba(96,96,96,0.2)!important
+}
+.category{
+    color:#2d92e7
+}
+
+img {
+    border: 0;
+}
+.clearfix:after{
+    visibility:hidden;
+    display:block;
+    font-size:0;
+    content:" ";
+    clear:both;
+    height:0
+}
+.justify{
+    text-align:justify
+}
+.justify:after{
+    content:' ';
+    display:inline-block;
+    width: 100%;
+    line-height:0;
+    overflow:hidden;
+    height:0;
+    padding:0;
+    margin:0;
+    visibility:hidden;
+}
+
+body{
+    font-size:13px;
+    -webkit-text-size-adjust: none;
+    max-width: 320px;
+    margin: 0 auto;
+}
+.title .more {
+    margin-right: 12px;
+}

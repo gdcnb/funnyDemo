@@ -1,0 +1,102 @@
+@import "../../views/lib/stylus/mixins/css3"
+
+/*
+* require ../titleBar/titleBar.styl
+*/
+
+.contsBar-head
+  float right
+  font-size 12px
+  margin-right 15px
+  color #2d92e7
+  &:after
+    content ''
+    display inline-block
+    margin-left 5px
+    width 16px
+    height 13px
+    background url(constellation_shift.png?__sprite) no-repeat
+    background-size 16px 13px
+    position relative
+    top 3px
+
+.contsBar-back
+  color #7d7d7d
+  &:after
+    width 13px
+    height 11px
+    background url(constellation_back.png?__sprite) no-repeat
+    background-size 13px 11px
+    top 1px
+
+
+.contsBar-cont
+  padding-left 63px
+
+.contsBar-icon
+  display block
+  float left
+  box-sizing border-box
+  width 56px
+  height 56px
+  >img
+    width 100%
+
+.contsBar-cont select
+  display block
+  position absolute
+  width 160px
+  top 0
+  bottom 0
+  opacity 0
+
+.contsBar-cont-title
+  position relative
+  box-sizing border-box
+  font-size 14px
+  line-height 30px
+  color #666666
+  border 1px solid #dddddd
+  width 160px
+  padding-right 20px
+  padding-left 3px
+  &:after
+    content ''
+    display block
+    box-sizing border-box
+    position absolute
+    top 12px
+    right 8px
+    width 5px
+    height 5px
+    border-bottom 1px solid #bbbbbb
+    border-right 1px solid #bbbbbb
+    transform rotate(45deg)
+
+.contsBar-fortune
+  margin-top 6px
+  font-size 14px
+  padding-left 3px
+  >em
+    display inline-block
+    line-height 15px
+    padding-right 3px
+
+.contsBar-star-active
+  color #ff7e00
+
+.contsBar-star-normal
+  color #c4c4c4
+
+.contsBar-sug
+  display block
+  margin-top 15px
+  font-size 14px
+  color #666666
+  line-height 20px
+  height 115px
+
+.contsBar-item
+  margin-right 5px
+  background-color #f7f7f7
+  height 40px

@@ -1,0 +1,268 @@
+@import "mixins/css3"
+
+.pos-rel
+  position relative
+
+.dis-b
+  display block
+.dis-l
+  display inline
+.dis-lb
+  display inline-block
+
+.hide
+  display none!important
+
+/* font-size */
+.font-size10
+  font-size 10px
+.font-size11
+  font-size 11px
+.font-size12
+  font-size 12px
+.font-size13
+  font-size 13px
+.font-size14
+  font-size 14px
+.font-size15
+  font-size 15px
+.font-size16
+  font-size 16px
+.font-size17
+  font-size 17px
+.font-size18
+  font-size 18px
+
+/* font-size --end */
+
+.font-red
+  color #FF0000
+.font-catalog
+  color #47aee9
+.font-blue
+  color #2d92e7
+.font-orange
+  color #ff7a60
+.font-gray
+  color #888
+.font-white
+  color #fff
+
+.font-fix
+  overflow hidden
+  word-break break-all
+  white-space nowrap
+  text-overflow ellipsis
+
+.font-bold
+  font-weight bold
+
+/* padding */
+.ptop1
+  padding-top 1px
+.ptop5
+  padding-top 5px
+.ptop10
+  padding-top 10px
+.pleft5
+  padding-left 5px
+.pleft10
+  padding-left 10px
+.ptb5
+  padding-top 5px
+  padding-bottom 5px
+.ptb10
+  padding-top 10px
+  padding-bottom 10px
+.plr10
+  padding-left 10px
+  padding-right 10px
+
+.pbottom5
+  padding-bottom 5px
+/* padding --end */
+
+/* margin */
+.mtop2
+  margin-top 2px
+.mtop5
+  margin-top 5px
+.mtop10
+  margin-top 10px
+.mtop15
+  margin-top 15px
+.mleft5
+  margin-left 5px
+.mright5
+  margin-right 5px
+.mbottom5
+  margin-bottom 5px
+.mbottom10
+  margin-bottom 10px
+
+.mtb10
+  margin-bottom 10px
+  margin-top 10px
+.mlr5
+  margin-left 5px
+  margin-right 5px
+.mlr10
+  margin-left 10px
+  margin-right 10px
+.mlr15
+  margin-left 15px
+  margin-right 15px
+/* margin --end*/
+
+.float-r
+  float right
+.float-l
+  float left
+
+.line-height13
+  line-height 13px
+.line-height14
+  line-height 14px
+.line-height15
+  line-height 15px
+.line-height16
+  line-height 16px
+.line-height17
+  line-height 17px
+.line-height18
+  line-height 18px
+.line-height26
+  line-height 26px
+
+.ovf-h
+  overflow hidden
+
+.tex-cent
+  text-align center
+.tex-right
+  text-align right
+.tex-left
+  text-align left
+
+.bgcol-com
+  background-color #C8C8C8
+
+.bodyWidth
+  max-width 320px
+  margin 0 auto
+
+/* 清除浮动 */
+.clearfix
+  &:before,
+  &:after
+    content " "
+    display table
+  &:after
+    clear both
+
+/* 行列基本布局 --begin */
+.row
+  box-sizing border-box
+  @extend .clearfix
+  *
+  box-sizing border-box
+
+.column1
+  make-column(1)
+
+.column2
+  make-column(2)
+
+.column3
+  make-column(3)
+
+.column4
+  make-column(4)
+
+.column5
+  make-column(5)
+
+.column6
+  make-column(6)
+
+.width30
+  float left
+  width 30%
+.width70
+  float left
+  width 70%
+
+.width40
+  float left
+  width 40%
+.width60
+  float left
+  width 60%
+
+/* 行列基本布局 --end */
+
+/* 组件间隔样式 */
+.unit-mg {
+  margin-top 5px
+  margin-bottom 5px
+}
+
+.line-between
+  position relative
+  &:after
+    content ''
+    display block
+    position absolute
+    width 1px
+    height 14px
+    background-color #F5F5F5
+    right 0
+    top 50%
+    margin-top -7px
+
+/* title */
+.title-theme
+  position relative
+  padding-left 16px
+  height 33px
+  line-height 34px
+  .title-icon
+    display block
+    position absolute
+    left 10px
+    top 50%
+    margin-top -7px
+    width 2px
+    height 14px
+  .subtitle-icon
+    display block
+    position absolute
+    left 10px
+    top 50%
+    margin-top -1.5px
+    width 3px
+    height 3px
+    border-radius 3px
+
+.more-navi
+  display inline-block
+  position absolute
+  top 0
+  right 12px
+  color #999999
+  font-size 11px
+  line-height 33px
+  .more-navi-arrow
+    display inline-block
+    width 8px
+    height 8px
+    border-top 1px solid #969696
+    border-right 1px solid #969696
+    transform rotate(45deg)
+
+/* title --end*/
+.com-bgtxt
+  background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.5))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 100%); /* Chrome10+,Safari5.1+ */
+  background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 100%); /* W3C */

@@ -1,0 +1,101 @@
+vendor(prop, args)
+  -webkit-{prop} args
+  -moz-{prop} args
+  -o-{prop} args
+  {prop} args
+
+border-radius()
+  vendor('border-radius', arguments)
+
+flex()
+  vendor('flex', arguments)
+
+box-shadow()
+  vendor('box-shadow', arguments)
+
+transition()
+    vendor('transition', arguments)
+
+transform()
+    vendor('transform', arguments)
+
+appearance()
+    vendor('appearance', arguments)
+
+box-sizing()
+    vendor('box-sizing', arguments)
+
+linear-gradient(start_color, end_color, start = left top, end = left bottom)
+  mozstart = top if start = left top
+  background start_color
+  background -moz-linear-gradient(mozstart, start_color 0%, end_color 100%)
+  background -webkit-gradient(linear, start, end, color-stop(0%, start_color), color-stop(100%, end_color))
+
+make-column(num)
+  float left
+  if num == 3
+    width 33%
+    &:nth-child(3n)
+      width 34%
+  else
+    width (100 / num)%
+
+mlellipsis(font-size, line-height, lines-to-show)
+  display block /* Fallback for non-webkit */
+  display -webkit-box
+  height font-size*line-height*lines-to-show /* Fallback for non-webkit */
+  font-size font-size
+  line-height line-height
+  -webkit-line-clamp lines-to-show
+  -webkit-box-orient vertical
+  overflow hidden
+  text-overflow ellipsis
+
+/*
+ * 播放按钮样式
+ *
+ * 参数说明:
+ *    
+ *    <width> 播放按钮的宽高度
+ *    <bgCol> 播放按钮的背景颜色
+ *    <triangleCol> 播放按钮的三角形颜色
+ *    <type> 播放按钮的形式: 圆环透明 ◎ --> 'transparent' 或 实心圆形 ● --> 'solid' 
+ *    <ringW> 当 type=='transparent' 时, 播放按钮圆环的宽度, 默认2px
+ *
+ * 注意事项:
+ *
+ *    playBtn设置了position relative属性, 如果需要设置其他position属性请先调用函数后再重写规则
+ *
+ * Examples:
+ *
+ *     playBtn 14px #fff #fff 'transparent' 2px
+ *     playBtn 14px #fff #fff 'solid'
+ *
+ */
+playBtn(width, bgCol, triangleCol, type, ringW = 2px)
+  position relative
+  box-sizing border-box
+  width  width
+  height width
+  border-radius width
+  if type == 'transparent'
+    border ringW solid bgCol
+  else if type == 'solid'
+    background-color bgCol
+  &::after
+    content ''
+    display block
+    position absolute
+    if type == 'transparent'
+      left ceil((2 / 7) * width)
+      top (3 / 14) * width
+    else if type == 'solid'
+      left ceil((9 / 28) * width)
+      top (4 / 14) * width
+    width 0
+    height 0
+    border 0 solid transparent
+    border-left-color triangleCol
+    border-left-width (5 / 14) * width
+    border-top-width (3 / 14) * width
+    border-bottom-width (3 / 14) * width
