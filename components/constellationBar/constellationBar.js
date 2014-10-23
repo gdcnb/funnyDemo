@@ -1,7 +1,7 @@
 
-var util = require('../util/util.js'),
-    storage = require('../storage/storage.js'),
-    model = require('../model/model.js');
+var util = require('components/util/util.js'),
+    storage = require('components/storage/storage.js'),
+    model = require('components/model/model.js');
 
 var ConstellationBar = function(elem, fr) {
 
