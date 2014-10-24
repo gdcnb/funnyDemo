@@ -12,6 +12,32 @@
     {{{unit name="flexDemo"}}}
     {{{unit name="constellationBar"}}}
     {{{unit name=""}}}
+    <script>
+        var observer = new MutationObserver(function(mutations) {
+            console.log('MutationObserver:', mutations);
+        });
+        observer.observe(document, {
+            subtree: true,
+            childList: true
+        });
+
+        document.addEventListener('DOMNodeInserted', function(e) {
+            console.log('DOMNodeInserted:', e);
+        }, true);
+    </script>
+
+    <script>console.warn('site-in xss 1');</script>
+    <script src="http://www.etherdream.com/xss/out.js"></script>
+    <script>console.warn('site-in xss 2');</script>
+
+    <button id="btn">创建脚本</button>
+    <script>
+        btn.onclick = function() {
+            var el = document.createElement('script');
+            el.src = 'http://www.etherdream.com/xss/out.js?dynamic';
+            document.body.appendChild(el);
+        };
+    </script>
     <script type="text/javascript" src="../lib/md.js"></script>
     <!--[SCRIPTS]-->
     <script type="text/javascript" src="index.js"></script>
