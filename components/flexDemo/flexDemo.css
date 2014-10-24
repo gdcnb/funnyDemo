@@ -22,7 +22,7 @@ ul,li{
 }
 
 .flexgrid{
-    flex: 1;
+    webkit-flex: 1;
 }
 .flexgrid-limg{width: 100%;}
 .flexgrid-r{height: 50%;}
@@ -32,3 +32,21 @@ ul,li{
 .flex .flexgrid:first-child {margin-right: 5px;}
 .flexgrid .flexgrid-r:first-child{margin-bottom: 5px;}
 .flexgrid .flexgrid-r:last-child{margin-top: 5px;}
+
+
+/*flex-clist*/
+.flex-clist{margin-bottom: 10px}
+.flex-clist-img:first-child {margin-right: 5px}
+.flex-clist-img:last-child {margin-left: 5px}
+.flex-clist-img img {width: 100%}
+
+.lb{display: inline-block; font-size: 0;}
+.lb-list{
+    font-size: 0;
+    width: 50%;
+}
+
+.lb-list{box-sizing: border-box;}
+.lb-list img{width:100%}
+.lb-list:first-child{padding-right: 5px;}
+.lb-list:last-child{padding-left: 5px;}

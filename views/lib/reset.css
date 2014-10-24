@@ -137,7 +137,6 @@ img {
 body{
     font-size:13px;
     -webkit-text-size-adjust: none;
-    max-width: 320px;
     margin: 0 auto;
 }
 .title .more {
