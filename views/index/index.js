@@ -1,1 +1,1 @@
-define(function(require){    var consBar = require('components/constellationBar/constellationBar.js');    consBar();});
+define(function(require){    var consBar = require('components/constellationBar/constellationBar.js');    consBar();    var optionTime = new Date;    optionTime = (optionTime.getTime() - startTime.getTime()) / 1000;    console.log("=============> optionTime=" + optionTime);});

@@ -1,34 +1,35 @@
 <!doctype html>
 <html>
 <head>
+    <script>var startTime = new Date;</script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
     <title>hello world</title>
     <link rel="stylesheet" type="text/css" href="../lib/reset.css">
     <link rel="stylesheet" type="text/css" href="index.styl">
     <!--[STYLES]-->
+    <script>
+        var headTime = new Date;
+        headTime = (headTime.getTime() - startTime.getTime()) / 1000;
+        console.log("=============> headTime=" + headTime);
+
+        document.onload = function() {
+            var loadTime = new Date;
+            loadTime = (loadTime.getTime() - startTime.getTime()) / 1000;
+            console.log("=============> loadTime=" + loadTime);
+        };
+    </script>
 </head>
 <body>
+    {{{unit name="bgDemo"}}}
     {{{unit name="flexDemo"}}}
+    <script>
+        var firstTime = new Date;
+        firstTime = (firstTime.getTime() - startTime.getTime()) / 1000;
+        console.log("=============> firstTime=" + firstTime);
+    </script>
     {{{unit name="constellationBar"}}}
     {{{unit name=""}}}
-    <script>
-        var observer = new MutationObserver(function(mutations) {
-            console.log('MutationObserver:', mutations);
-        });
-        observer.observe(document, {
-            subtree: true,
-            childList: true
-        });
-
-        document.addEventListener('DOMNodeInserted', function(e) {
-            console.log('DOMNodeInserted:', e);
-        }, true);
-    </script>
-
-    <script>console.warn('site-in xss 1');</script>
-    <script src="http://www.etherdream.com/xss/out.js"></script>
-    <script>console.warn('site-in xss 2');</script>
 
     <button id="btn">创建脚本</button>
     <script>
@@ -41,5 +42,6 @@
     <script type="text/javascript" src="../lib/md.js"></script>
     <!--[SCRIPTS]-->
     <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="http://vcollect.st.uae.uc.cn/js/c.click.event.page-view.error.query.src.debug.js"></script>
 </body>
 </html>
