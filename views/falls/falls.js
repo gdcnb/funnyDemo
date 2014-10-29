@@ -2,7 +2,7 @@ define(function(require){
     var util = require('components/util/util.js'),
         slice = Array.prototype.slice;
 
-    window.onload = function() {
+    /*window.onload = function() {
         waterfall('main', 'box');
     };
     var dataInt = {'data': [
@@ -29,7 +29,7 @@ define(function(require){
         }
         waterfall('main', 'box');
 
-    };
+    };*/
 
     function checkScrollSlide() {
         var oParent = document.getElementById('main');
@@ -51,7 +51,7 @@ define(function(require){
         var oBoxW = oBoxs[0].offsetWidth;
         var cols = Math.floor(document.documentElement.clientWidth/oBoxW);
 
-        oParent.style.cssText = 'width:' + oBoxW * cols +'px; margin: 0 auto;';
+        oParent.style.cssText = 'width:' + oBoxW * cols +'px;';
 
         var hArr = [];
         for(var i=0; i<oBoxs.length; i++) {
