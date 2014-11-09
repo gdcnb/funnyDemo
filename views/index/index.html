@@ -22,16 +22,20 @@
     </script>
 </head>
 <body>
+    <button class="btn-s">测试滚动</button>
     {{{unit name="bgDemo"}}}
-    {{{unit name="flexDemo"}}}
+
+    {{{unit name="bgDemo"}}}
+    <button class="btn-s">测试滚动</button>
+    {{{unit name="bgDemo"}}}
     <script>
         var firstTime = new Date;
         firstTime = (firstTime.getTime() - startTime.getTime()) / 1000;
         console.log("=============> firstTime=" + firstTime);
     </script>
+    <button class="btn-s">测试滚动</button>
     {{{unit name="constellationBar"}}}
-    {{{unit name=""}}}
-
+    <div id="scrollTest">动画滚动测试</div>
     <button id="btn">创建脚本</button>
     <script>
         btn.onclick = function() {
@@ -41,8 +45,13 @@
         };
     </script>
     <script type="text/javascript" src="../lib/md.js"></script>
+    <script type="text/javascript" src="../lib/wastat.js"></script>
     <!--[SCRIPTS]-->
+    <script>
+        /*
+        * @require components/scrollAnimate/scrollAnimate.js
+        * */
+    </script>
     <script type="text/javascript" src="index.js"></script>
-    <script type="text/javascript" src="http://vcollect.st.uae.uc.cn/js/c.click.event.page-view.error.query.src.debug.js"></script>
 </body>
 </html>
