@@ -4,10 +4,11 @@
  */
 function scrollAnimate(domId) {
     var targetDom = document.querySelector(domId),
-        viewH = window.innerHeight;
+        viewH = window.innerHeight,
         pageH = document.body.offsetHeight,
         scrollH = document.body.scrollHeight;
 
+    clearInterval(targetDom.timer);
     // private function
     /**
      * 获取滚动条需要滚动的距离，正数为向下滚动，负数为向上滚动
@@ -30,11 +31,12 @@ function scrollAnimate(domId) {
 
     //只有页面高度比
     if((pageH > viewH) && targetDom) {
-        clearInterval(targetDom.timer);
-
         targetDom.timer = setInterval(function(){
             var scrollDistance = getScrollDistance(targetDom),
                 speed = scrollDistance > 0 ? Math.ceil(scrollDistance/5) : Math.floor(scrollDistance/5);
+
+            //窗口高度会受到手机地址栏的影响，所以每次执行都重新拿一下值
+            viewH = window.innerHeight;
 
             if(scrollDistance === 0){
                 clearInterval(targetDom.timer);
