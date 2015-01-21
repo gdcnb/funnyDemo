@@ -22,13 +22,13 @@
     </script>
 </head>
 <body>
-    <div id="scrollTest">动画滚动测试</div>
+
     <button class="btn-s">测试滚动</button>
     <button onclick="javascript:alert(window.innerHeight);">获取窗口高度</button>
     <button onclick="javascript:alert(document.body.offsetHeight);">获取页面高度</button>
     <button onclick="javascript:alert(document.body.scrollHeight);">获取滚动条高度</button>
     {{{unit name="bgDemo"}}}
-
+    <div id="scrollTest">动画滚动测试</div>
     {{{unit name="bgDemo"}}}
     <button class="btn-s">测试滚动</button>
     {{{unit name="bgDemo"}}}
@@ -39,7 +39,13 @@
     </script>
     <button class="btn-s">测试滚动</button>
     {{{unit name="constellationBar"}}}
+    <button onclick="javascript:alert(window.innerHeight);">获取窗口高度</button>
+    <button onclick="javascript:alert(document.body.offsetHeight);">获取页面高度</button>
+    <button onclick="javascript:alert(document.body.scrollHeight);">获取滚动条高度</button>
 
+    <div id="showLog">
+
+    </div>
     <script type="text/javascript" src="../lib/md.js"></script>
     <script type="text/javascript" src="../lib/wastat.js"></script>
     <!--[SCRIPTS]-->
