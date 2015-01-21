@@ -2,7 +2,7 @@
  * 页面滚动动画插件，提供一个页面元素的id号,之后它会滚动到该元素的位置
  * @param domId css选择器
  */
-function scrollAnimate(domId) {
+function scrollAnimate(domId, callback) {
     var targetDom = document.querySelector(domId);
 
     targetDom.timer = setInterval(function(){
@@ -11,12 +11,32 @@ function scrollAnimate(domId) {
 
         if(scrollDistance === 0){
             clearInterval(targetDom.timer);
+            if(typeof callback === 'function') {
+                callback();
+            }
+
+            //执行完动画后移除事件监听
+            window.removeEventListener('scroll', scrollEvent, false);
+            document.body.removeEventListener('touchmove', clearIntervalTimer, false);
         } else {
             document.body.scrollTop += speed;
         }
     }, 20);
 
-    // private function
+    //启动scroll事件更新viewH，解决地址栏引发的视图高度变化的问题
+    window.addEventListener('scroll', scrollEvent, false);
+
+    document.body.addEventListener('touchmove', clearIntervalTimer, false);
+
+    /* private function */
+    function clearIntervalTimer() {
+        //当在滚动过程中有触发 touchmove 事件时则停止动画
+        clearInterval(targetDom.timer);
+    }
+
+    function scrollEvent() {
+        var viewH = window.innerHeight;
+    }
     /**
      * 获取滚动条需要滚动的距离，正数为向下滚动，负数为向上滚动
      * @param elem
@@ -37,16 +57,7 @@ function scrollAnimate(domId) {
             parent = parent.offsetParent;
         }
 
-        /*var logDom = document.getElementById('showLog');
-        logDom.innerHTML = 'viewH = '+ viewH +'<br>' +
-            'distance = '+ (distance) +'<br>' +
-            'distance - scrollY = '+ (distance - scrollY) +'<br>' +
-            'scrollH = '+ scrollH +'<br>' +
-            'scrollY = '+ scrollY +'<br>' +
-            'scrollH - viewH = '+ (scrollH - viewH) +'<br>' +
-            'viewH = '+ viewH;
-*/
-        //TODO 判断当前滚动条的位置
+        //判断当前滚动条的位置
         var maxDist = scrollH - viewH;
         if(pageH < viewH) {
             //页面内容高度不满一屏时不用滚动
@@ -61,11 +72,6 @@ function scrollAnimate(domId) {
         return resultH
     }
 }
-
-//启动scroll事件更新viewH，解决地址栏引发的视图高度变化的问题
-window.addEventListener('scroll', function(){
-    var viewH = window.innerHeight;
-});
 
 window.scrollAnimate = scrollAnimate;
 
