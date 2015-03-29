@@ -1,13 +1,4 @@
 
-/* private function */
-function clearIntervalTimer() {
-    //当在滚动过程中有触发 touchmove 事件时则停止动画
-    clearInterval(targetDom.timer);
-}
-
-function scrollEvent() {
-    var viewH = window.innerHeight;
-}
 /**
  * 获取滚动条需要滚动的距离，正数为向下滚动，负数为向上滚动
  * @param elem
@@ -60,6 +51,17 @@ function scrollAnimate(domId, callback) {
             document.body.scrollTop += speed;
         }
     }, 20);
+
+
+    /* private function */
+    function clearIntervalTimer() {
+        //当在滚动过程中有触发 touchmove 事件时则停止动画
+        clearInterval(targetDom.timer);
+    }
+
+    function scrollEvent() {
+        var viewH = window.innerHeight;
+    }
 
     //启动scroll事件更新viewH，解决地址栏引发的视图高度变化的问题
     window.addEventListener('scroll', scrollEvent, false);
